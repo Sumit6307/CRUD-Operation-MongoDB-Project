@@ -1,0 +1,56 @@
+
+
+<html>
+<body>
+ 
+</body>
+
+  <head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+     
+  </head>
+
+
+  <body>
+
+
+     <h1  style="align-items: center;" >Student Records(Gravity-Records)</h1>
+     <table    class="table table-success table-striped  "  width="500px" align="center" border="2px  solid black" > 
+        <tr>
+ 
+             <td>Roll Number</td>
+             <td>Name</td>
+             <td>Courses</td>
+             <td>Fess</td>
+</tr>
+
+        </tr>
+  <%
+        for(r in records) {
+
+  %>
+    <tr>
+       <td><%=records[r].rollno%>  </td>  
+       <td><%=records[r].name%>  </td>  
+       <td><%=records[r].course%>  </td>  
+       <td><%=records[r].fees%>  </td>  
+       <td><a class="btn btn-danger"   href="/deletedata/?grollno=<%=records[r].rollno%>" >Delete</a></td>
+       <td><a   class="btn btn-success" href="/updatedata/?grollno=<%=records[r].rollno%>" >Update</a></td>
+
+        </tr>
+   <%    
+}
+   %>
+   
+     <br>
+      
+
+  <a  class="btn btn-warning" id="insertbutton" href="/insert" style="align-items: center;" > <button>Insert Records</button> </a>  
+
+     
+  </body>
+
+
+</html>
